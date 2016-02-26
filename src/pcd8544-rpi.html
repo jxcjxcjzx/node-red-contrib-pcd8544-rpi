@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pcd8544-rpi',{
+        category: 'Raspberry Pi',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:"PCD8544 Raspberry-Pi"}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "rpi.png",
+        label: function() {
+            return this.name||"pcd8544-rpi";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="pcd8544-rpi">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="pcd8544-rpi">
+    <p>A node for Node-RED to communicate with the LCD screen PCD8544 for Raspberry Pi from www.sunfounder.com.</p>
+    <p>This use preformatted 4 lines of characters.</p>
+    <p>Expects a <b>msg.payload</b> with a string in it.</p>
+    <p>Strings for the second line of the display must start <b>2:</b> - the third start <b>3:</b> - and the fourth <b>4:</b></p>
+    <p>To clear the display send the string <b>clr:</b></p>
+    <p>It is up to you to manage string lengths to suit the display.</p>
+    <p>Requires the wiringPi library in order to work.</p>
+</script>
