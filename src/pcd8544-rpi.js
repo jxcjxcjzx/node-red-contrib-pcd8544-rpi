@@ -10,17 +10,17 @@ module.exports = function(RED) {
         this.on('input', function(msg) {
           this.log("LCD screen received " + msg.payload);
 
-          if (msg.payload.startsWith("1:")) {
-            lcd.drawstring(0, 0, msg.payload);
+          if ("1:" == msg.payload.substr(0, 2)) {
+            lcd.drawstring(0, 0, msg.payload.substr(2));
           }
-          else if (msg.payload.startsWith("2:")) {
-            lcd.drawstring(0, 8, msg.payload);
+          else if ("2:" == msg.payload.substr(0, 2)) {
+            lcd.drawstring(0, 8, msg.payload.substr(2));
           }
-          else if (msg.payload.startsWith("3:")) {
-            lcd.drawstring(0, 16, msg.payload);
+          else if ("3:" == msg.payload.substr(0, 2)) {
+            lcd.drawstring(0, 16, msg.payload.substr(2));
           }
-          else if (msg.payload.startsWith("4:")) {
-            lcd.drawstring(0, 24, msg.payload);
+          else if ("4:" == msg.payload.substr(0, 2)) {
+            lcd.drawstring(0, 24, msg.payload.substr(2));
           }
           else {
             lcd.drawstring(0, 0, msg.payload);
