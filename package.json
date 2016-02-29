@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-pcd8544-rpi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node RED node for PCD8544 LCD screen driver for Raspberry-Pi",
   "author": "Paul-Emmanuel Vandenburie <pevandenburie@yahoo.fr> (https://github.com/pevandenburie)",
   "keywords": [
@@ -15,11 +15,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "pcd8544_rpi": "~0.1.0"
+    "bindings": "^1.2.1",
+    "nan": "^2.0.7"
   },
   "node-red": {
     "nodes": {
       "pcd8544-rpi": "src/pcd8544-rpi.js"
     }
+  },
+  "main": "index.js",
+  "gypfile": true,
+  "scripts": {
+    "install": "node-gyp rebuild"
   }
 }
